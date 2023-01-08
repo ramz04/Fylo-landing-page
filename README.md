@@ -31,7 +31,7 @@ This is a solution to the  [Fylo landing page with two column layout challenge o
 ### Links
 
 - Solution URL: [Github](https://github.com/ramz04/Fylo-landing-page/)
-- Live Site URL: [Vercel](https://intro-component-signup.vercel.app/)
+- Live Site URL: [Vercel](https://fylo-landing-page-ten-sigma.vercel.app/)
 ### Built with
 
 - Semantic HTML5 markup
