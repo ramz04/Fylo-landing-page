@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+  <style> 
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap'); 
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            VeryDarkBlue: 'hsl(243, 87%, 12%)',
+            DesaturatedBlue: 'hsl(238, 22%, 44%)',
+            BrightBlue: 'hsl(224, 93%, 58%)',
+            ModerateCyan: 'hsl(170, 45%, 43%)',
+            LightGrayishBlue:'hsl(240, 75%, 98%)',
+            LightGray: 'hsl(0, 0%, 75%)',
+          },
+          fontFamily: {
+            'raleway': ['Raleway','sans serif'],
+            'opensSans': ['Open Sans', 'sans serif'],
+          },
+          container: {
+            padding: '4rem',
+          },
+          backgroundImage:{
+            'mbcurve':"url('images/bg-curve-mobile.svg')",
+            'dkcurve': "url('images/bg-curve-desktop.svg')",
+            'illustration1': "url('images/illustration-1.svg')",
+            'illustration2': "url('images/illustration-2.svg')"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer components {
+      .hamburger div:first-child{
+        @apply rotate-45 translate-y-1.5; 
+      }
+      .hamburger div:last-child{
+        @apply -rotate-45 translate-y-0.5;
+      }
+      
+    }
+  </style>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="font-opensSans">
+    <!-- Features
+  Team
+  Sign In
+
+  All your files in one secure location, accessible anywhere.
+
+  Fylo stores your most important files in one secure location. 
+  Access them wherever you need, share and collaborate with friends, 
+  family, and co-workers.
+
+  Get Started
+
+  Stay productive, wherever you are
+
+  Never let location be an issue when accessing your files. Fylo has you 
+  covered for all of your file storage needs.
+
+  Securely share files and folders with friends, family and colleagues for 
+  live collaboration. No email attachments required!
+
+  See how Fylo works
+
+  Fylo has improved our team productivity by an order of magnitude. Since 
+  making the switch our team has become a well-oiled collaboration machine.
+
+  Kyle Burton
+  Founder & CEO, Huddle
+
+  Get early access today
+
+  It only takes a minute to sign up and our free starter tier is extremely generous. 
+  If you have any questions, our support team would be happy to help you.
+
+  Get Started For Free
+
+  Phone: +1-543-123-4567
+  example@fylo.com
+
+  About Us
+  Jobs
+  Press
+  Blog
+
+  Contact Us
+  Terms
+  Privacy -->
+
+    <div class="p-10 mx-auto px-4 py-2 md:py-5 overflow-x-hidden">
+      <!-- NAVBAR -->
+      <nav class="md:px-14 flex items-center justify-between">
+          <div class="relative z-20">
+            <a href="/">
+              <img src="images/logo.svg" alt=""class='w-[80px]'>
+            </a>
+          </div>
+          <div class="flex items-center justify-end">
+            <input type="checkbox" name="hamburger" id="hamburger" class="peer" hidden>
+            <label for="hamburger" class=" peer-checked:hamburger block relative z-20 p-6 -mr-6 cursor-pointer md:hidden">
+              <div aria-hidden="true " class="m-auto h-0.5 w-6 rounded bg-sky-900 transition duration-300">
+              </div>
+              <div aria-hidden="true" class="m-auto h-0.5  w-6 mt-[3px] rounded bg-sky-900 transition duration-300"></div>
+            </label>
+
+            <div class="peer-checked:translate-x-0 transition duration-250  fixed inset-0 w-[calc(100%-4.5rem)] translate-x-[-100%] bg-white shadow-xl md:border-r-0 border-r md:border-l-0 md:w-auto md:static md:shadow-none md:translate-x-0 ">
+              <div class="flex flex-col h-full md:flex-row">
+                <ul class="px-6 pt-32 text-gray-700 space-y-8 md:px-12 md:space-y-0 md:flex md:space-x-12 md:pt-0">
+                  <li>
+                    <a href="#" lass="group relative before:absolute before:inset-x-0 before:bottom-0">
+                      <span class="relative text-VeryDarkBlue font-raleway font-bold md:font-normal  text-md" >Features</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" lass="group relative before:absolute before:inset-x-0 before:bottom-0">
+                      <span class="relative text-VeryDarkBlue font-raleway font-bold md:font-normal text-md" >Team</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" lass="group relative before:absolute before:inset-x-0 before:bottom-0">
+                      <span class="relative text-VeryDarkBlue font-raleway font-bold md:font-normal text-md" >Sign In</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </nav>
+      <!-- MAIN CONTENTS -->
+      <main>
+        <!-- FIRST SECTION -->
+        <section class="md:px-14 md:flex md:flex-row-reverse md:mt-5 mb-14  md:mb-20    " g>
+            <div class="p-2  basis-1/2 ">
+              <img src="images/illustration-1.svg" alt="" class="p-2">
+            </div>
+            <div class="basis-1/2 flex  flex-col md:items-start  items-center justify-center md:h-auto ">
+              <h2 class="text-center text-VeryDarkBlue md:text-left md:text-4xl  md:tracking-wider  md:pr-10  text-xl font-bold font-raleway mt-2 mb-3 ">
+                All your files in one secure location, accessible anywhere.
+              </h2>
+              <p class="text-center tracking-tight text-sm md:text-left md:tracking-wider md:pr-10  text-VeryDarkBlue md:text-base">
+                Fylo stores your most important files in one secure location. 
+                Access them wherever you need, share and collaborate with friends, 
+                family, and co-workers.
+              </p>
+              <div class="md:grid md:grid-cols-3 gap-x-3 px-3 md:px-0 md:w-[90%] md:px-0 sm:px-20  space-y-3 md:space-y-0 mt-5">
+                <input type="email" class="w-full  focus:outline-none border-2  border-DesaturatedBlue  rounded-md py-2 px-4  focus:border-BrightBlue focus:ring-1 focus:caret-BrightBlue col-span-2  focus:ring-BrightBlue hover:border-BrightBlue  transition duration-25" placeholder="Enter your email..." name="email">
+                <button class="w-full  bg-BrightBlue  py-2 rounded-md   text-white hover:bg-blue-400 ">Get Started</button>
+              </div>
+            </div>
+          </div>
+        </section >
+        <!-- CURVED SVG -->
+        <img src="images/bg-curve-desktop.svg" alt="" class="bg-cover w-full">
+        <!-- SECOND SECTION -->
+        <section class="bg-LightGrayishBlue md:px-14 p-6 md:flex md:flex-row-reverse gap-4 ">
+          <div class="md:p-3  md:basis-1/2 ">
+            <img src="images/illustration-2.svg" alt="" class="bg-LightGrayBlue bg-cover ">
+          </div>
+          <div class="md:basis-1/2">
+            <h2 class="text-center text-VeryDarkBlue mt-20 md:mt-0 md:text-left md:text-4xl  md:tracking-wide font-black font-raleway mb-3 ">
+              Stay productive, wherever you are
+            </h2>
+            <p class="text-DesaturatedBlue mb-2 mt-3 md:w-[75%] ">Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
+            <p class="text-DesaturatedBlue mt-4 md:w-[75%]">
+              Securely share files and folders with friends, family and colleagues for 
+              live collaboration. No email attachments required!
+            </p>
+            <div class="flex justify-center mt-6 md:justify-start  ">
+              <div class="border-b-2 py-1 flex gap-x-4 border-ModerateCyan ">
+                <p class="text-ModerateCyan">See how Fylo works</p>
+                <img src="images/icon-arrow.svg" alt="" class="w-[25px] h-[25px] ">
+              </div>
+            </div>
+            <div class="flex flex-col justify-center md:justify-start">
+              <div class="mt-8 bg-white p-3  md:w-[350px]  rounded-md shadow-lg mb-3 ">
+                <div class="p-2 ">
+                  <img src="images/icon-quotes.svg" alt="">
+                  <p class="text-xs font-medium  font-raleway text-VeryDarkBlue tracking-tight  mt-2 ">
+                    Fylo has improved our team productivity by an order of magnitude. Since 
+                    making the switch our team has become a well-oiled collaboration machine.
+                  </p>
+                  <div class="flex gap-x-2 items-end  h-full ">
+                    <img src="images/avatar-testimonial.jpg" alt="" class="w-[35px]  h-[35px]  rounded-full mt-3 ">
+                    <div class="">
+                      <h2 class="text-[12px]  tracking-wide font-bold   ">Kyle Burton</h2>
+                      <p class="text-[8px]  tracking-wide font-bold   ">Founder & CEO, Huddle</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+        <!-- THIRD SECTION -->
+        <section class="bg-DesaturatedBlue md:px-14 p-6 md:py-10">
+          <div class="flex flex-col md:flex-row md:justify-between items-center gap-y-4  mb-3">
+            <div class="">
+              <h2 class="text-center md:text-left font-semibold text-white mb-3">Get early access today</h2>
+              <p class="text-center md:text-left md:w-[80%] text-white text-sm font-light ">It only takes a minute to sign up and our free starter tier is extremely generous. 
+                If you have any questions, our support team would be happy to help you.</p>
+            </div>
+            <div class="w-full px-3 md:p-6 md:flex md:flex-col md:items-end">
+              <input type="text" placeholder="email@example.com" class="mt-3 px-2 py-2 md:w-[65%]  w-full font-raleway   rounded-md transition duration-25  focus:outline-none   ">
+              <button class="mt-2 bg-BrightBlue md:self-center  py-2 md:w-[30%] w-full text-center rounded-md text-white font-raleway font-bold hover:bg-blue-400  ">Get Started For Free</button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- FOOTER -->
+      <footer class="bg-VeryDarkBlue py-2 md:px-14 ">
+        <div class="mt-14 px-6 md:mb-14 ">
+          <svg width="166" height="49" class="stroke-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M.014.03h93.96v48.29H.015z"/></defs><g fill="#fff" fill-rule="evenodd"><path d="M0 14.13v.123l27.95 13.13L56 14.209v-.033L27.95 1 0 14.13zm10.077.062L27.95 5.795l17.877 8.397-17.877 8.396-17.874-8.396zM27.95 32.483L0 19.55v4.784l27.95 12.964L56 24.289v-4.784L27.95 32.483zm0 9.703L0 29.25v4.783L27.95 47 56 33.99v-4.784l-28.05 12.98z" fill="#fff"/><g transform="translate(72)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path d="M87.56 24.152a8.1 8.1 0 0 0-2.161-5.573 7.259 7.259 0 0 0-2.34-1.673 6.864 6.864 0 0 0-2.85-.601c-1.01 0-1.961.2-2.852.601a7.257 7.257 0 0 0-2.34 1.673 8.102 8.102 0 0 0-2.16 5.574 8.102 8.102 0 0 0 2.16 5.573 7.257 7.257 0 0 0 2.34 1.672 6.864 6.864 0 0 0 2.851.602c1.01 0 1.96-.2 2.852-.602a7.259 7.259 0 0 0 2.339-1.672 8.1 8.1 0 0 0 2.16-5.574zm6.415 0c0 1.932-.357 3.723-1.07 5.373a13.098 13.098 0 0 1-2.94 4.28c-1.247 1.205-2.71 2.156-4.388 2.854-1.678.699-3.468 1.048-5.369 1.048-1.9 0-3.683-.349-5.346-1.048a13.863 13.863 0 0 1-4.366-2.876 13.351 13.351 0 0 1-2.94-4.302c-.713-1.65-1.07-3.426-1.07-5.329 0-1.873.364-3.634 1.092-5.284a13.92 13.92 0 0 1 2.962-4.325 13.671 13.671 0 0 1 4.367-2.898 13.552 13.552 0 0 1 5.301-1.048c1.901 0 3.69.35 5.369 1.048 1.678.698 3.14 1.65 4.388 2.854 1.248 1.204 2.228 2.638 2.94 4.302.713 1.665 1.07 3.449 1.07 5.351zM64.258 36.905a8.6 8.6 0 0 1-1.715.58c-.638.148-1.3.222-1.982.222a9.84 9.84 0 0 1-2.74-.379 6.003 6.003 0 0 1-2.295-1.226c-.653-.565-1.173-1.3-1.56-2.207-.385-.907-.578-2-.578-3.277V.029h6.549v29.474c0 1.07.215 1.806.646 2.207.43.401.943.602 1.537.602.742 0 1.455-.223 2.138-.669v5.262zM50.492 11.22L38.908 41.854c-.861 2.289-1.99 3.939-3.386 4.95-1.396 1.01-3.06 1.515-4.99 1.515-.297 0-.623-.022-.98-.066a7.352 7.352 0 0 1-1.025-.201l-2.138-5.975a8.486 8.486 0 0 0 1.56.557c.534.134 1.039.201 1.514.201 1.01 0 1.93-.23 2.762-.691.832-.46 1.47-1.315 1.916-2.564l.891-2.586-9.935-25.773h6.995l5.925 16.588 5.57-16.588h6.905zM23.538 7.342H6.786v8.294h16.529v5.618H6.785v15.784H.015V1.412h23.524v5.93z" fill="#fff" mask="url(#b)"/></g></g></svg>
+          <div class="grid grid-row-3 md:grid-cols-4  md:gap-8  gap-10  mt-8 text-white ">
+            <ul class="flex flex-col gap-y-3 ">
+              <li class="flex gap-5 items-center  "><img src="./images/icon-phone.svg" class="bg-center bg-cover h-[16px]" alt=""> Phone: +1-543-123-4567</li>
+              <li class="flex gap-5 items-center "><img src="./images/icon-email.svg" class="bg-center bg-cover h-[16px]" alt=""> example@fylo.com</li>
+            </ul>
+            <ul>
+              <li>About Us</li>
+              <li>Jobs</li>
+              <li>Press</li>
+              <li>Blog</li>
+            </ul>
+            <ul>
+              <li>Contact Us</li>
+              <li>Terms</li>
+              <li>Privacy</li>
+            </ul>
+            <ul class="flex gap-2 justify-center items-center md:items-start md:justify-start ">
+              <li><svg fill="#fff" version="1.1" id="Layer_1" height="24px" class="border rounded-full p-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 24 24" xml:space="preserve">
+             <style type="text/css">
+               .st0{fill:none;}
+             </style>
+             <path d="M19.8,5.4h-2c-1.3,0-1.4,0.4-1.4,1.4v1.9h3L19.3,12h-2.7v10H12V12h-1.7V8.6H12V6.4C12,3.6,13.1,2,16.4,2h3.4V5.4z"/>
+             <rect class="st0"/>
+             </svg></li>
+             <li><svg fill="#fff" height="24px" class="border rounded-full p-1" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <title>twitter</title>
+              <path d="M30.917 6.728c-1.026 0.465-2.217 0.805-3.464 0.961l-0.061 0.006c1.268-0.771 2.222-1.952 2.687-3.354l0.013-0.044c-1.124 0.667-2.431 1.179-3.82 1.464l-0.082 0.014c-1.123-1.199-2.717-1.946-4.485-1.946-3.391 0-6.14 2.749-6.14 6.14 0 0.496 0.059 0.979 0.17 1.441l-0.008-0.042c-5.113-0.254-9.613-2.68-12.629-6.366l-0.025-0.031c-0.522 0.873-0.831 1.926-0.831 3.052 0 0.013 0 0.026 0 0.039v-0.002c0 0.001 0 0.003 0 0.005 0 2.12 1.075 3.989 2.709 5.093l0.022 0.014c-1.026-0.034-1.979-0.315-2.811-0.785l0.031 0.016v0.075c0 0.001 0 0.002 0 0.002 0 2.961 2.095 5.434 4.884 6.014l0.040 0.007c-0.484 0.135-1.040 0.212-1.614 0.212-0.406 0-0.802-0.039-1.186-0.113l0.039 0.006c0.813 2.459 3.068 4.212 5.739 4.264l0.006 0c-2.072 1.638-4.721 2.627-7.602 2.627-0.005 0-0.009 0-0.014 0h0.001c-0.515-0.001-1.022-0.031-1.521-0.089l0.061 0.006c2.663 1.729 5.92 2.757 9.418 2.757 0.005 0 0.009 0 0.014 0h-0.001c0.037 0 0.082 0 0.126 0 9.578 0 17.343-7.765 17.343-17.343 0-0.039-0-0.077-0-0.116l0 0.006c0-0.262 0-0.524-0.019-0.786 1.21-0.878 2.229-1.931 3.042-3.136l0.028-0.044z"></path>
+              </svg></li>
+              <li><svg fill="#fff" height="24px" class="border rounded-full p-1" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <title>instagram</title>
+                <path d="M25.805 7.996c0 0 0 0.001 0 0.001 0 0.994-0.806 1.799-1.799 1.799s-1.799-0.806-1.799-1.799c0-0.994 0.806-1.799 1.799-1.799v0c0.993 0.001 1.798 0.805 1.799 1.798v0zM16 20.999c-2.761 0-4.999-2.238-4.999-4.999s2.238-4.999 4.999-4.999c2.761 0 4.999 2.238 4.999 4.999v0c0 0 0 0.001 0 0.001 0 2.76-2.237 4.997-4.997 4.997-0 0-0.001 0-0.001 0h0zM16 8.3c0 0 0 0-0 0-4.253 0-7.7 3.448-7.7 7.7s3.448 7.7 7.7 7.7c4.253 0 7.7-3.448 7.7-7.7v0c0-0 0-0 0-0.001 0-4.252-3.447-7.7-7.7-7.7-0 0-0 0-0.001 0h0zM16 3.704c4.003 0 4.48 0.020 6.061 0.089 1.003 0.012 1.957 0.202 2.84 0.538l-0.057-0.019c1.314 0.512 2.334 1.532 2.835 2.812l0.012 0.034c0.316 0.826 0.504 1.781 0.516 2.778l0 0.005c0.071 1.582 0.087 2.057 0.087 6.061s-0.019 4.48-0.092 6.061c-0.019 1.004-0.21 1.958-0.545 2.841l0.019-0.058c-0.258 0.676-0.64 1.252-1.123 1.726l-0.001 0.001c-0.473 0.484-1.049 0.866-1.692 1.109l-0.032 0.011c-0.829 0.316-1.787 0.504-2.788 0.516l-0.005 0c-1.592 0.071-2.061 0.087-6.072 0.087-4.013 0-4.481-0.019-6.072-0.092-1.008-0.019-1.966-0.21-2.853-0.545l0.059 0.019c-0.676-0.254-1.252-0.637-1.722-1.122l-0.001-0.001c-0.489-0.47-0.873-1.047-1.114-1.693l-0.010-0.031c-0.315-0.828-0.506-1.785-0.525-2.785l-0-0.008c-0.056-1.575-0.076-2.061-0.076-6.053 0-3.994 0.020-4.481 0.076-6.075 0.019-1.007 0.209-1.964 0.544-2.85l-0.019 0.059c0.247-0.679 0.632-1.257 1.123-1.724l0.002-0.002c0.468-0.492 1.045-0.875 1.692-1.112l0.031-0.010c0.823-0.318 1.774-0.509 2.768-0.526l0.007-0c1.593-0.056 2.062-0.075 6.072-0.075zM16 1.004c-4.074 0-4.582 0.019-6.182 0.090-1.315 0.028-2.562 0.282-3.716 0.723l0.076-0.025c-1.040 0.397-1.926 0.986-2.656 1.728l-0.001 0.001c-0.745 0.73-1.333 1.617-1.713 2.607l-0.017 0.050c-0.416 1.078-0.67 2.326-0.697 3.628l-0 0.012c-0.075 1.6-0.090 2.108-0.090 6.182s0.019 4.582 0.090 6.182c0.028 1.315 0.282 2.562 0.723 3.716l-0.025-0.076c0.796 2.021 2.365 3.59 4.334 4.368l0.052 0.018c1.078 0.415 2.326 0.669 3.628 0.697l0.012 0c1.6 0.075 2.108 0.090 6.182 0.090s4.582-0.019 6.182-0.090c1.315-0.029 2.562-0.282 3.716-0.723l-0.076 0.026c2.021-0.796 3.59-2.365 4.368-4.334l0.018-0.052c0.416-1.078 0.669-2.326 0.697-3.628l0-0.012c0.075-1.6 0.090-2.108 0.090-6.182s-0.019-4.582-0.090-6.182c-0.029-1.315-0.282-2.562-0.723-3.716l0.026 0.076c-0.398-1.040-0.986-1.926-1.729-2.656l-0.001-0.001c-0.73-0.745-1.617-1.333-2.607-1.713l-0.050-0.017c-1.078-0.416-2.326-0.67-3.628-0.697l-0.012-0c-1.6-0.075-2.108-0.090-6.182-0.090z"></path>
+                </svg></li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="flex justify-center items-center md:hidden ">
+          <ul class="flex gap-2 ">
+            <li><svg fill="#fff" version="1.1" id="Layer_1" height="24px" class="border rounded-full p-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+              viewBox="0 0 24 24" xml:space="preserve">
+           <style type="text/css">
+             .st0{fill:none;}
+           </style>
+           <path d="M19.8,5.4h-2c-1.3,0-1.4,0.4-1.4,1.4v1.9h3L19.3,12h-2.7v10H12V12h-1.7V8.6H12V6.4C12,3.6,13.1,2,16.4,2h3.4V5.4z"/>
+           <rect class="st0"/>
+           </svg></li>
+           <li><svg fill="#fff" height="24px" class="border rounded-full p-1" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <title>twitter</title>
+            <path d="M30.917 6.728c-1.026 0.465-2.217 0.805-3.464 0.961l-0.061 0.006c1.268-0.771 2.222-1.952 2.687-3.354l0.013-0.044c-1.124 0.667-2.431 1.179-3.82 1.464l-0.082 0.014c-1.123-1.199-2.717-1.946-4.485-1.946-3.391 0-6.14 2.749-6.14 6.14 0 0.496 0.059 0.979 0.17 1.441l-0.008-0.042c-5.113-0.254-9.613-2.68-12.629-6.366l-0.025-0.031c-0.522 0.873-0.831 1.926-0.831 3.052 0 0.013 0 0.026 0 0.039v-0.002c0 0.001 0 0.003 0 0.005 0 2.12 1.075 3.989 2.709 5.093l0.022 0.014c-1.026-0.034-1.979-0.315-2.811-0.785l0.031 0.016v0.075c0 0.001 0 0.002 0 0.002 0 2.961 2.095 5.434 4.884 6.014l0.040 0.007c-0.484 0.135-1.040 0.212-1.614 0.212-0.406 0-0.802-0.039-1.186-0.113l0.039 0.006c0.813 2.459 3.068 4.212 5.739 4.264l0.006 0c-2.072 1.638-4.721 2.627-7.602 2.627-0.005 0-0.009 0-0.014 0h0.001c-0.515-0.001-1.022-0.031-1.521-0.089l0.061 0.006c2.663 1.729 5.92 2.757 9.418 2.757 0.005 0 0.009 0 0.014 0h-0.001c0.037 0 0.082 0 0.126 0 9.578 0 17.343-7.765 17.343-17.343 0-0.039-0-0.077-0-0.116l0 0.006c0-0.262 0-0.524-0.019-0.786 1.21-0.878 2.229-1.931 3.042-3.136l0.028-0.044z"></path>
+            </svg></li>
+            <li><svg fill="#fff" height="24px" class="border rounded-full p-1" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <title>instagram</title>
+              <path d="M25.805 7.996c0 0 0 0.001 0 0.001 0 0.994-0.806 1.799-1.799 1.799s-1.799-0.806-1.799-1.799c0-0.994 0.806-1.799 1.799-1.799v0c0.993 0.001 1.798 0.805 1.799 1.798v0zM16 20.999c-2.761 0-4.999-2.238-4.999-4.999s2.238-4.999 4.999-4.999c2.761 0 4.999 2.238 4.999 4.999v0c0 0 0 0.001 0 0.001 0 2.76-2.237 4.997-4.997 4.997-0 0-0.001 0-0.001 0h0zM16 8.3c0 0 0 0-0 0-4.253 0-7.7 3.448-7.7 7.7s3.448 7.7 7.7 7.7c4.253 0 7.7-3.448 7.7-7.7v0c0-0 0-0 0-0.001 0-4.252-3.447-7.7-7.7-7.7-0 0-0 0-0.001 0h0zM16 3.704c4.003 0 4.48 0.020 6.061 0.089 1.003 0.012 1.957 0.202 2.84 0.538l-0.057-0.019c1.314 0.512 2.334 1.532 2.835 2.812l0.012 0.034c0.316 0.826 0.504 1.781 0.516 2.778l0 0.005c0.071 1.582 0.087 2.057 0.087 6.061s-0.019 4.48-0.092 6.061c-0.019 1.004-0.21 1.958-0.545 2.841l0.019-0.058c-0.258 0.676-0.64 1.252-1.123 1.726l-0.001 0.001c-0.473 0.484-1.049 0.866-1.692 1.109l-0.032 0.011c-0.829 0.316-1.787 0.504-2.788 0.516l-0.005 0c-1.592 0.071-2.061 0.087-6.072 0.087-4.013 0-4.481-0.019-6.072-0.092-1.008-0.019-1.966-0.21-2.853-0.545l0.059 0.019c-0.676-0.254-1.252-0.637-1.722-1.122l-0.001-0.001c-0.489-0.47-0.873-1.047-1.114-1.693l-0.010-0.031c-0.315-0.828-0.506-1.785-0.525-2.785l-0-0.008c-0.056-1.575-0.076-2.061-0.076-6.053 0-3.994 0.020-4.481 0.076-6.075 0.019-1.007 0.209-1.964 0.544-2.85l-0.019 0.059c0.247-0.679 0.632-1.257 1.123-1.724l0.002-0.002c0.468-0.492 1.045-0.875 1.692-1.112l0.031-0.010c0.823-0.318 1.774-0.509 2.768-0.526l0.007-0c1.593-0.056 2.062-0.075 6.072-0.075zM16 1.004c-4.074 0-4.582 0.019-6.182 0.090-1.315 0.028-2.562 0.282-3.716 0.723l0.076-0.025c-1.040 0.397-1.926 0.986-2.656 1.728l-0.001 0.001c-0.745 0.73-1.333 1.617-1.713 2.607l-0.017 0.050c-0.416 1.078-0.67 2.326-0.697 3.628l-0 0.012c-0.075 1.6-0.090 2.108-0.090 6.182s0.019 4.582 0.090 6.182c0.028 1.315 0.282 2.562 0.723 3.716l-0.025-0.076c0.796 2.021 2.365 3.59 4.334 4.368l0.052 0.018c1.078 0.415 2.326 0.669 3.628 0.697l0.012 0c1.6 0.075 2.108 0.090 6.182 0.090s4.582-0.019 6.182-0.090c1.315-0.029 2.562-0.282 3.716-0.723l-0.076 0.026c2.021-0.796 3.59-2.365 4.368-4.334l0.018-0.052c0.416-1.078 0.669-2.326 0.697-3.628l0-0.012c0.075-1.6 0.090-2.108 0.090-6.182s-0.019-4.582-0.090-6.182c-0.029-1.315-0.282-2.562-0.723-3.716l0.026 0.076c-0.398-1.040-0.986-1.926-1.729-2.656l-0.001-0.001c-0.73-0.745-1.617-1.333-2.607-1.713l-0.050-0.017c-1.078-0.416-2.326-0.67-3.628-0.697l-0.012-0c-1.6-0.075-2.108-0.090-6.182-0.090z"></path>
+              </svg></li>
+          </ul>
+        </div> -->
+      </footer>
+    </div>
+    
+</body>
+</html>
